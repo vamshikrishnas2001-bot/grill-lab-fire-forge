@@ -18,7 +18,7 @@ import platter from "@/assets/signature-platter.jpg";
  * Until then these show as static posters using existing site photos.
  */
 const HOME_STORY_CLIPS: StoryClip[] = [
-  { src: "", poster: charcoal, label: "01 · THE CHARCOAL", title: "1,200°F burn" },
+  { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/15101766_2160_3840_60fps.mp4", poster: charcoal, label: "01 · THE CHARCOAL", title: "1,200°F burn" },
   { src: "", poster: marinade, label: "02 · THE MARINADE", title: "24hr soak" },
   { src: "", poster: bbq, label: "03 · THE CRAFT", title: "Fired to order" },
   { src: "", poster: truck, label: "04 · TONIGHT", title: "Live at the truck" },
