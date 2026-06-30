@@ -81,7 +81,7 @@ export function StoryReel({ clips }: { clips: StoryClip[] }) {
       </div>
 
       <div className="container-grill mt-10">
-        <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-5 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {clips.map((clip, i) => {
             const isActive = activeIndex === i;
             const isPlayable = Boolean(clip.src);
@@ -91,7 +91,7 @@ export function StoryReel({ clips }: { clips: StoryClip[] }) {
                 key={clip.label + i}
                 onClick={() => handleTap(i)}
                 className={cn(
-                  "relative shrink-0 w-[140px] aspect-[9/16] rounded-2xl overflow-hidden border bg-bg2 snap-start text-left transition",
+                  "relative shrink-0 w-[220px] md:w-[260px] aspect-[9/16] rounded-2xl overflow-hidden border bg-bg2 snap-start text-left transition",
                   isActive ? "border-ember" : "border-white/10"
                 )}
               >
@@ -119,9 +119,9 @@ export function StoryReel({ clips }: { clips: StoryClip[] }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/40" />
 
                 {isActive ? (
-                  <Pause className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 text-warm/90" />
+                  <Pause className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-9 w-9 text-warm/90" />
                 ) : (
-                  <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 text-warm/90" />
+                  <Play className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-9 w-9 text-warm/90" />
                 )}
 
                 {isActive && isPlayable && (
@@ -133,9 +133,9 @@ export function StoryReel({ clips }: { clips: StoryClip[] }) {
                   </button>
                 )}
 
-                <div className="absolute left-2 right-2 bottom-2">
-                  <p className="label-mono text-ember text-[9px]">{clip.label}</p>
-                  <p className="text-warm text-[11px] font-medium leading-tight mt-0.5">{clip.title}</p>
+                <div className="absolute left-3 right-3 bottom-3">
+                  <p className="label-mono text-ember text-[10px] whitespace-nowrap overflow-hidden text-ellipsis">{clip.label}</p>
+                  <p className="text-warm text-sm font-medium leading-tight mt-1">{clip.title}</p>
                 </div>
               </button>
             );
