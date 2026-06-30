@@ -119,17 +119,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const router = useRouter();
-  const pathname = router.state.location.pathname;
-  const isAdmin = pathname.startsWith("/admin");
 
   return (
     <QueryClientProvider client={queryClient}>
-      {!isAdmin && <NavBar />}
+      <NavBar />
       <main className="min-h-screen">
         <Outlet />
       </main>
-      {!isAdmin && <Footer />}
+      <Footer />
     </QueryClientProvider>
   );
 }
