@@ -1,10 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, MapPin, Calendar, Flame } from "lucide-react";
-import { CTAButton, Reveal, SectionLabel, FireParticles, HeatMeter } from "@/components/primitives";
+import { CTAButton, Reveal, SectionLabel, HeatMeter } from "@/components/primitives";
 import { StoryReel, type StoryClip } from "@/components/StoryReel";
 import { InstaSection, type InstaPost } from "@/components/InstaSection";
+import { TruckLoader } from "@/components/TruckLoader";
 import { MENU, TESTIMONIALS } from "@/lib/data";
 import truck from "@/assets/truck-hero.jpg";
 import charcoal from "@/assets/charcoal.jpg";
@@ -53,7 +52,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      <FireIntro />
+      <TruckLoader />
       <TruckReveal />
       <BuiltOnFire />
       <StoryReel clips={HOME_STORY_CLIPS} />
@@ -63,73 +62,6 @@ function Home() {
       <InstaSection posts={HOME_INSTA_POSTS} />
       <TrackBookStrip />
     </>
-  );
-}
-
-function FireIntro() {
-  const [hidden, setHidden] = useState(true);
-  const [showLogo, setShowLogo] = useState(false);
-
-  useEffect(() => {
-    const skipped = typeof window !== "undefined" && localStorage.getItem("gl.skipIntro") === "1";
-    if (!skipped) {
-      setHidden(false);
-      const t = setTimeout(() => setShowLogo(true), 1500);
-      return () => clearTimeout(t);
-    }
-  }, []);
-
-  const dismiss = (remember = false) => {
-    if (remember) localStorage.setItem("gl.skipIntro", "1");
-    setHidden(true);
-    requestAnimationFrame(() => {
-      document.getElementById("truck-reveal")?.scrollIntoView({ behavior: "smooth" });
-    });
-  };
-
-  return (
-    <AnimatePresence>
-      {!hidden && (
-        <motion.section
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -40 }}
-          transition={{ duration: 0.7 }}
-          className="fixed inset-0 z-[60] bg-black flex items-center justify-center overflow-hidden"
-        >
-          <FireParticles count={60} />
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ember/30 via-ember/5 to-transparent pointer-events-none" />
-
-          <div className="relative text-center px-6">
-            <AnimatePresence>
-              {showLogo && (
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <p className="label-mono mb-6">EST. 2021 · BANGALORE</p>
-                  <h1 className="display-xl forged">The Grill Lab</h1>
-                  <p className="mt-4 font-mono text-xs md:text-sm tracking-[0.5em] text-copper uppercase">
-                    Burning Charcoal
-                  </p>
-                  <motion.div
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-                    className="mt-12 flex flex-col items-center gap-4"
-                  >
-                    <button
-                      onClick={() => dismiss(false)}
-                      className="pulse-ember bg-ember text-white px-8 py-4 text-xs font-semibold tracking-[0.3em] uppercase hover:scale-[1.02] transition"
-                    >
-                      Enter The Grill Lab
-                    </button>
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </motion.section>
-      )}
-    </AnimatePresence>
   );
 }
 
