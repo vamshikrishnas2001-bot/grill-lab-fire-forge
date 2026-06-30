@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, MapPin, Calendar, Flame } from "lucide-react";
 import { CTAButton, Reveal, SectionLabel, FireParticles, HeatMeter } from "@/components/primitives";
 import { StoryReel, type StoryClip } from "@/components/StoryReel";
+import { InstaSection, type InstaPost } from "@/components/InstaSection";
 import { MENU, TESTIMONIALS } from "@/lib/data";
 import truck from "@/assets/truck-hero.jpg";
 import charcoal from "@/assets/charcoal.jpg";
@@ -22,6 +23,18 @@ const HOME_STORY_CLIPS: StoryClip[] = [
   { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/12526561_2160_3840_25fps.mp4", poster: marinade, label: "02 · THE MARINADE", title: "24hr soak" },
   { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/14690975_2160_3840_30fps.mp4", poster: bbq, label: "03 · THE CRAFT", title: "Fired to order" },
   { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/15923724_2160_3840_60fps.mp4", poster: truck, label: "04 · TONIGHT", title: "Live at the truck" },
+];
+
+/**
+ * Polaroid grid on the homepage. Swap these for real Instagram post
+ * screenshots/exports whenever you have them — just replace the `img`
+ * with an imported asset or a hosted URL.
+ */
+const HOME_INSTA_POSTS: InstaPost[] = [
+  { img: bbq, caption: "Fired to order" },
+  { img: shawarma, caption: "24hr marinade" },
+  { img: platter, caption: "Forged favorites" },
+  { img: charcoal, caption: "1,200°F burn" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -47,6 +60,7 @@ function Home() {
       <MeetTheFire />
       <SignatureTeaser />
       <CustomerTicker />
+      <InstaSection posts={HOME_INSTA_POSTS} />
       <TrackBookStrip />
     </>
   );
