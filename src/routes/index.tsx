@@ -19,9 +19,9 @@ import platter from "@/assets/signature-platter.jpg";
  */
 const HOME_STORY_CLIPS: StoryClip[] = [
   { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/15101766_2160_3840_60fps.mp4", poster: charcoal, label: "01 · THE CHARCOAL", title: "1,200°F burn" },
-  { src: "", poster: marinade, label: "02 · THE MARINADE", title: "24hr soak" },
-  { src: "", poster: bbq, label: "03 · THE CRAFT", title: "Fired to order" },
-  { src: "", poster: truck, label: "04 · TONIGHT", title: "Live at the truck" },
+  { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/12526561_2160_3840_25fps.mp4", poster: marinade, label: "02 · THE MARINADE", title: "24hr soak" },
+  { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/14690975_2160_3840_30fps.mp4", poster: bbq, label: "03 · THE CRAFT", title: "Fired to order" },
+  { src: "https://ht5ebq9addo2mcj3.public.blob.vercel-storage.com/15923724_2160_3840_60fps.mp4", poster: truck, label: "04 · TONIGHT", title: "Live at the truck" },
 ];
 
 export const Route = createFileRoute("/")({
