@@ -40,16 +40,16 @@ export function InstaSection({ posts }: { posts: InstaPost[] }) {
           </div>
         </Reveal>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-x-2 gap-y-10 md:gap-x-0">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 place-items-center max-w-4xl mx-auto">
           {posts.map((post, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <a
                 href={IG_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group block ${TILTS[i % TILTS.length]} hover:rotate-0 hover:scale-105 transition-transform duration-500 ease-out md:-mx-3`}
+                className={`group block ${TILTS[i % TILTS.length]} hover:rotate-0 hover:scale-105 transition-transform duration-500 ease-out`}
               >
-                <div className="bg-[#f4f1ea] p-3 pb-10 w-[170px] sm:w-[200px] md:w-[230px] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
+                <div className="bg-[#f4f1ea] p-3 pb-10 w-[150px] sm:w-[190px] md:w-[210px] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
                   <div className="aspect-square overflow-hidden bg-bg2">
                     <img
                       src={post.img}
