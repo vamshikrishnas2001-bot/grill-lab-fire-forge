@@ -18,7 +18,7 @@ export function InstaSection({ posts }: { posts: InstaPost[] }) {
   if (!posts.length) return null;
 
   return (
-    <section className="py-24 md:py-32 overflow-hidden">
+    <section className="py-16 md:py-32 overflow-hidden">
       <div className="container-grill">
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
