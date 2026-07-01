@@ -109,16 +109,16 @@ function FireIntro() {
                 >
                   <p className="label-mono mb-6">EST. 2021 · BANGALORE</p>
                   <h1 className="display-xl forged">The Grill Lab</h1>
-                  <p className="mt-4 font-mono text-xs md:text-sm tracking-[0.5em] text-copper uppercase">
+                  <p className="mt-4 font-mono text-[11px] md:text-sm tracking-[0.25em] md:tracking-[0.5em] text-copper uppercase">
                     Burning Charcoal
                   </p>
                   <motion.div
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-                    className="mt-12 flex flex-col items-center gap-4"
+                    className="mt-10 md:mt-12 flex flex-col items-center gap-4"
                   >
                     <button
                       onClick={() => dismiss(false)}
-                      className="pulse-ember bg-ember text-white px-8 py-4 text-xs font-semibold tracking-[0.3em] uppercase hover:scale-[1.02] transition"
+                      className="pulse-ember bg-ember text-white px-6 md:px-8 py-3.5 md:py-4 text-[11px] md:text-xs font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase hover:scale-[1.02] transition"
                     >
                       Enter The Grill Lab
                     </button>
@@ -156,18 +156,18 @@ function TruckReveal() {
         ))}
       </div>
 
-      <div className="container-grill relative z-10 grid md:grid-cols-2 gap-12 items-center py-24">
+      <div className="container-grill relative z-10 grid md:grid-cols-2 gap-12 items-center py-16 md:py-24">
         <Reveal>
           <SectionLabel>Chapter 01 · The Truck</SectionLabel>
           <h2 className="display-xl mt-4 text-warm">
             Born in Fire.<br/>
             <span className="text-ember">Built</span> for the Streets.
           </h2>
-          <p className="mt-8 text-lg text-warm/70 max-w-md leading-relaxed">
+          <p className="mt-6 md:mt-8 text-base md:text-lg text-warm/70 max-w-md leading-relaxed">
             BBQ Chicken & Shawarma. Crafted, not cooked. Every order forged over white-hot
             charcoal, on a matte-black truck that rolls into your neighborhood after sundown.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4">
             <Link to="/menu"><CTAButton>Explore the menu</CTAButton></Link>
             <Link to="/tracker"><CTAButton variant="ghost">Find the truck</CTAButton></Link>
           </div>
@@ -203,7 +203,7 @@ function BuiltOnFire() {
   ];
 
   return (
-    <section className="relative py-24 md:py-40">
+    <section className="relative py-16 md:py-40">
       <div className="container-grill">
         <Reveal>
           <SectionLabel>Chapter 02 · Built on Fire</SectionLabel>
@@ -212,7 +212,7 @@ function BuiltOnFire() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
+        <div className="mt-10 md:mt-16 grid md:grid-cols-3 gap-5 md:gap-6">
           {panels.map((p, i) => (
             <Reveal key={p.label} delay={i * 0.1}>
               <article className="group relative overflow-hidden bg-bg2 border border-white/5 hover:border-copper/30 transition h-full">
@@ -220,11 +220,11 @@ function BuiltOnFire() {
                   <img src={p.img} alt={p.title} loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                 </div>
-                <div className="p-7">
+                <div className="p-5 md:p-7">
                   <SectionLabel>{p.label}</SectionLabel>
                   <h3 className="display-md text-warm mt-3">{p.title}</h3>
                   <p className="mt-4 text-warm/65 text-sm leading-relaxed">{p.body}</p>
-                  <div className="mt-6 pt-6 border-t border-white/5 grid grid-cols-3 gap-3">
+                  <div className="mt-6 pt-6 border-t border-white/5 grid grid-cols-3 gap-2 md:gap-3">
                     {p.stats.map(([k, v]) => (
                       <div key={k}>
                         <p className="font-display text-2xl text-ember">{v}</p>
@@ -250,27 +250,27 @@ function MeetTheFire() {
   ];
   return (
     <section className="relative">
-      <div className="grid md:grid-cols-2 min-h-[80vh]">
-        <div className="relative">
+      <div className="grid md:grid-cols-2 md:min-h-[80vh]">
+        <div className="relative h-[45vh] md:h-auto">
           <img src={bbq} alt="BBQ chicken on grill" loading="lazy"
             className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/60 md:to-transparent" />
         </div>
-        <div className="relative bg-bg2 flex items-center px-8 md:px-16 py-20 md:py-0 border-l border-copper/30">
+        <div className="relative bg-bg2 flex items-center px-6 md:px-16 py-14 md:py-0 border-l border-copper/30">
           <div>
             <SectionLabel>Chapter 03 · The Brand</SectionLabel>
             <h2 className="display-lg mt-4 text-warm">Meet the Fire</h2>
-            <div className="mt-10 space-y-8">
+            <div className="mt-8 md:mt-10 space-y-6 md:space-y-8">
               {values.map((v, i) => (
                 <Reveal key={v.word} delay={i * 0.15}>
-                  <div className="flex items-baseline gap-6">
-                    <span className="font-display text-4xl md:text-6xl text-ember">{v.word}</span>
+                  <div className="flex items-baseline gap-4 md:gap-6">
+                    <span className="font-display text-3xl md:text-6xl text-ember">{v.word}</span>
                     <span className="text-warm/60 text-sm">{v.line}</span>
                   </div>
                 </Reveal>
               ))}
             </div>
-            <Link to="/about" className="mt-12 inline-flex items-center gap-2 text-copper text-sm tracking-widest uppercase group">
+            <Link to="/about" className="mt-10 md:mt-12 inline-flex items-center gap-2 text-copper text-sm tracking-widest uppercase group">
               Our Story <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
             </Link>
           </div>
@@ -284,9 +284,9 @@ function SignatureTeaser() {
   const items = MENU.filter((m) => ["bbq-1", "sh-3", "bbq-3"].includes(m.id));
   const imgs = [bbq, shawarma, platter];
   return (
-    <section className="container-grill py-24 md:py-40">
+    <section className="container-grill py-16 md:py-40">
       <Reveal>
-        <div className="flex items-end justify-between gap-6 mb-12">
+        <div className="flex items-end justify-between gap-6 mb-8 md:mb-12">
           <div>
             <SectionLabel>Chapter 04 · Signature Items</SectionLabel>
             <h2 className="display-lg mt-3 text-warm">Forged Favorites.</h2>
@@ -304,13 +304,13 @@ function SignatureTeaser() {
               <img src={imgs[i]} alt={item.name} loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-[1.2s]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-7">
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
                 <h3 className="display-md text-warm">{item.name}</h3>
-                <div className="mt-3 flex items-center justify-between opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition duration-500">
+                <div className="mt-3 flex items-center justify-between opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 transition duration-500">
                   <HeatMeter level={item.heatLevel} />
                   <span className="font-display text-2xl text-ember">₹{item.price}</span>
                 </div>
-                <p className="mt-4 inline-flex items-center gap-2 text-xs tracking-widest uppercase text-copper opacity-0 group-hover:opacity-100 transition delay-100">
+                <p className="mt-3 md:mt-4 inline-flex items-center gap-2 text-xs tracking-widest uppercase text-copper opacity-100 md:opacity-0 md:group-hover:opacity-100 transition delay-100">
                   Explore item <ArrowRight className="h-3 w-3" />
                 </p>
               </div>
@@ -325,21 +325,21 @@ function SignatureTeaser() {
 function CustomerTicker() {
   const loop = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
-    <section className="relative py-24 border-y border-white/5 bg-bg2/40 overflow-hidden">
-      <div className="container-grill mb-10">
+    <section className="relative py-16 md:py-24 border-y border-white/5 bg-bg2/40 overflow-hidden">
+      <div className="container-grill mb-8 md:mb-10">
         <SectionLabel>Chapter 05 · Fire Stories</SectionLabel>
         <h2 className="display-lg mt-3 text-warm">Words from the Lab.</h2>
       </div>
       <div className="overflow-hidden">
-        <div className="flex ticker gap-8 w-max">
+        <div className="flex ticker gap-6 md:gap-8 w-max">
           {loop.map((t, i) => (
-            <div key={i} className="w-[420px] md:w-[560px] shrink-0 px-8 py-7 bg-bg2 border border-white/5">
+            <div key={i} className="w-[280px] sm:w-[420px] md:w-[560px] shrink-0 px-6 md:px-8 py-6 md:py-7 bg-bg2 border border-white/5">
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.flame }).map((_, j) => (
                   <Flame key={j} className="h-4 w-4 text-ember fill-ember" />
                 ))}
               </div>
-              <p className="font-display text-2xl md:text-3xl text-warm leading-tight">"{t.quote}"</p>
+              <p className="font-display text-xl md:text-3xl text-warm leading-tight">"{t.quote}"</p>
               <p className="mt-5 label-mono">{t.name} · <span className="text-warm/40">{t.handle}</span></p>
             </div>
           ))}
@@ -352,8 +352,8 @@ function CustomerTicker() {
 function TrackBookStrip() {
   return (
     <section className="grid md:grid-cols-2">
-      <Link to="/tracker" className="group relative p-12 md:p-20 bg-black overflow-hidden border-b md:border-b-0 md:border-r border-copper/30 hover:bg-bg2 transition">
-        <div className="absolute top-12 right-12 flex items-center gap-2">
+      <Link to="/tracker" className="group relative p-8 md:p-20 bg-black overflow-hidden border-b md:border-b-0 md:border-r border-copper/30 hover:bg-bg2 transition">
+        <div className="absolute top-8 right-8 md:top-12 md:right-12 flex items-center gap-2">
           <span className="block w-2 h-2 rounded-full bg-ember animate-pulse" />
           <span className="label-mono">Open Now</span>
         </div>
@@ -365,7 +365,7 @@ function TrackBookStrip() {
         </p>
       </Link>
 
-      <Link to="/catering" className="group relative p-12 md:p-20 bg-bg2 overflow-hidden hover:bg-black transition">
+      <Link to="/catering" className="group relative p-8 md:p-20 bg-bg2 overflow-hidden hover:bg-black transition">
         <Calendar className="h-8 w-8 text-copper mb-6" />
         <h3 className="display-lg text-warm">Book for Your Event</h3>
         <p className="mt-3 text-warm/60 max-w-md">From 50 to 1,000+. We bring the truck. We bring the fire.</p>
