@@ -34,13 +34,13 @@ const HOURS = [
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 md:pt-32 pb-24">
       <div className="container-grill text-center">
         <SectionLabel>Talk to us</SectionLabel>
         <h1 className="display-xl mt-3 forged">Get in Touch.</h1>
       </div>
 
-      <section className="container-grill mt-20 grid lg:grid-cols-2 gap-12">
+      <section className="container-grill mt-12 md:mt-20 grid lg:grid-cols-2 gap-10 md:gap-12">
         <div>
           <SectionLabel>Channels</SectionLabel>
           <div className="mt-6 space-y-3">
@@ -85,7 +85,7 @@ function Contact() {
         </div>
       </section>
 
-      <section className="container-grill mt-20 grid lg:grid-cols-2 gap-12">
+      <section className="container-grill mt-12 md:mt-20 grid lg:grid-cols-2 gap-10 md:gap-12">
         <Reveal>
           <SectionLabel>Find us</SectionLabel>
           <div className="mt-6 aspect-[4/3] border border-white/10 overflow-hidden bg-bg2">
