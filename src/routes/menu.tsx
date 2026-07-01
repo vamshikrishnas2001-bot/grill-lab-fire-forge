@@ -31,22 +31,22 @@ function MenuPage() {
   const items = cat === "all" ? MENU : MENU.filter((m) => m.category === cat);
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 md:pt-32 pb-24">
       <div className="container-grill text-center">
         <SectionLabel>The Full Menu</SectionLabel>
         <h1 className="display-xl mt-3 forged">Crafted, Not Cooked</h1>
-        <p className="mt-6 text-warm/60 max-w-xl mx-auto">
+        <p className="mt-5 md:mt-6 text-warm/60 max-w-xl mx-auto">
           Every item below is fired on the truck, to your order. No warming lamps. No microwaves. Just charcoal.
         </p>
       </div>
 
-      <div className="container-grill mt-14 flex flex-wrap items-center justify-center gap-1 md:gap-2 border-y border-white/5 py-4">
+      <div className="container-grill mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-1 md:gap-2 border-y border-white/5 py-3 md:py-4">
         {CATS.map((c) => (
           <button
             key={c.id}
             onClick={() => setCat(c.id)}
             className={cn(
-              "relative px-5 py-2 text-xs tracking-[0.25em] uppercase transition",
+              "relative px-3.5 md:px-5 py-2 text-xs tracking-[0.2em] md:tracking-[0.25em] uppercase transition",
               cat === c.id ? "text-warm" : "text-warm/50 hover:text-warm"
             )}
           >
@@ -58,7 +58,7 @@ function MenuPage() {
         ))}
       </div>
 
-      <div className="container-grill mt-16 space-y-24">
+      <div className="container-grill mt-12 md:mt-16 space-y-14 md:space-y-24">
         {items.map((item, i) => (
           <MenuRow key={item.id} item={item} flip={i % 2 === 1} />
         ))}
