@@ -25,8 +25,8 @@ function Tracker() {
   const [notify, setNotify] = useState(false);
 
   return (
-    <div className="pt-28">
-      <div className="relative h-[68vh] md:h-[75vh] bg-bg2 overflow-hidden">
+    <div className="pt-20 md:pt-28">
+      <div className="relative h-[70vh] md:h-[75vh] bg-bg2 overflow-hidden">
         <iframe
           title="Truck location"
           src="https://www.google.com/maps?q=Koramangala+5th+Block+Bangalore&output=embed"
@@ -36,7 +36,7 @@ function Tracker() {
         <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/40 pointer-events-none" />
 
         {/* Status card overlay */}
-        <div className="absolute left-4 right-4 md:left-12 md:right-auto top-6 md:top-12 max-w-md bg-black/85 backdrop-blur-xl border border-copper/30 p-6 md:p-8">
+        <div className="absolute left-3 right-3 md:left-12 md:right-auto top-4 md:top-12 max-w-md bg-black/85 backdrop-blur-xl border border-copper/30 p-5 md:p-8">
           <div className="flex items-center gap-3">
             <span className="relative flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full rounded-full bg-ember opacity-60 animate-ping" />
@@ -84,7 +84,7 @@ function Tracker() {
         </div>
       </div>
 
-      <section className="container-grill py-20">
+      <section className="container-grill py-14 md:py-20">
         <Reveal>
           <SectionLabel>Upcoming Locations</SectionLabel>
           <h2 className="display-lg mt-3 text-warm">This Week's Routes</h2>
