@@ -73,7 +73,7 @@ export function StoryReel({ clips }: { clips: StoryClip[] }) {
   }
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-32">
       <div className="container-grill">
         <SectionLabel>From the Fire</SectionLabel>
         <h2 className="display-lg mt-3 text-warm max-w-xl">The Truck, In Motion.</h2>
