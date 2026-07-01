@@ -54,13 +54,13 @@ function Gallery() {
   const photos = tab === "all" ? PHOTOS : PHOTOS.filter((p) => p.cat === tab);
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-24 md:pt-32 pb-24">
       <div className="container-grill text-center">
         <SectionLabel>Gallery</SectionLabel>
         <h1 className="display-xl mt-3 forged">The Fire, Framed.</h1>
       </div>
 
-      <div className="container-grill mt-12 flex flex-wrap justify-center gap-1 md:gap-2 border-y border-white/5 py-4">
+      <div className="container-grill mt-8 md:mt-12 flex flex-wrap justify-center gap-1 md:gap-2 border-y border-white/5 py-4">
         {TABS.map((t) => (
           <button key={t.id} onClick={() => setTab(t.id)}
             className={cn("relative px-5 py-2 text-xs tracking-[0.25em] uppercase transition",
@@ -103,14 +103,14 @@ function Lightbox({ open, photos, index, onClose, onNav }: any) {
     <AnimatePresence>
       {open && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[80] bg-black/95 flex items-center justify-center p-6">
-          <button onClick={onClose} className="absolute top-6 right-6 text-warm/80 hover:text-warm"><X className="h-7 w-7" /></button>
-          <button onClick={() => onNav(-1)} className="absolute left-4 md:left-12 text-warm/60 hover:text-copper"><ChevronLeft className="h-10 w-10" /></button>
-          <button onClick={() => onNav(1)} className="absolute right-4 md:right-12 text-warm/60 hover:text-copper"><ChevronRight className="h-10 w-10" /></button>
+          className="fixed inset-0 z-[80] bg-black/95 flex items-center justify-center p-4 md:p-6">
+          <button onClick={onClose} className="absolute top-4 right-4 md:top-6 md:right-6 text-warm/80 hover:text-warm p-2"><X className="h-6 w-6 md:h-7 md:w-7" /></button>
+          <button onClick={() => onNav(-1)} className="absolute bottom-4 left-4 md:bottom-auto md:left-12 md:top-1/2 md:-translate-y-1/2 text-warm/60 hover:text-copper p-2"><ChevronLeft className="h-8 w-8 md:h-10 md:w-10" /></button>
+          <button onClick={() => onNav(1)} className="absolute bottom-4 right-4 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 text-warm/60 hover:text-copper p-2"><ChevronRight className="h-8 w-8 md:h-10 md:w-10" /></button>
           <motion.figure key={index} initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-            className="max-w-5xl max-h-[85vh]">
-            <img src={photos[index].src} alt={photos[index].caption} className="max-w-full max-h-[80vh] object-contain" />
-            <figcaption className="mt-3 text-center label-mono">{photos[index].caption}</figcaption>
+            className="max-w-5xl max-h-[75vh] md:max-h-[85vh]">
+            <img src={photos[index].src} alt={photos[index].caption} className="max-w-full max-h-[65vh] md:max-h-[80vh] object-contain" />
+            <figcaption className="mt-3 text-center label-mono px-4">{photos[index].caption}</figcaption>
           </motion.figure>
         </motion.div>
       )}
