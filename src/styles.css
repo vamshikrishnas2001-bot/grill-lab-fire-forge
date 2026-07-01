@@ -86,6 +86,15 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  button, a {
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     background-image: radial-gradient(circle at 20% -10%, oklch(0.20 0.06 45 / 0.5), transparent 40%),
